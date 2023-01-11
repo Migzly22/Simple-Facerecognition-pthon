@@ -1,11 +1,8 @@
 import os
 import cv2
-import sys
 import numpy as np
 import tkinter as tk
 import customtkinter as ct
-from tkinter import filedialog
-import tkinter.scrolledtext as st
 from PIL import Image, ImageTk
 import face_recognition as fr
 
@@ -31,7 +28,7 @@ class App(ct.CTk):
         self.listlist()
 
 
-        self.title("CustomTkinter + Facial Recognition") 
+        self.title("ALT F4") 
         self.geometry(f"{App.WIDTH}x{App.HEIGHT}")
         self.resizable (width=False, height=False)
         
@@ -189,15 +186,6 @@ class App(ct.CTk):
         button.place(relx=0.5, rely=0.7, anchor=tk.CENTER)
 
 #This part is for the OpenCV (I hate it even though ive passed this part my brain still doesnt understand how it works. I guess TRIAL AND ERROR is more useful than searching something and doesnt even understand a single thing)
-
-    def findEncodings(self,images):
-        encodeList =[]
-        for img in images:
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            encode = fr.face_encodings(img)[0]
-            encodeList.append(encode)
-        
-        self.encodeListKnown = encodeList
 
     def open_camera(self):
         # Open camera feed for capturing image 
