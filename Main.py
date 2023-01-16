@@ -219,7 +219,7 @@ class App(ct.CTk):
             
 
             if not self.cancel:
-                self.img_holder.after(10, self.show_frame)
+                self.img_holder.after(5, self.show_frame)
 
         else:
             print("Using camera feed to take pictures.")
@@ -256,13 +256,11 @@ class App(ct.CTk):
         for  encodeFace, faceLoc in zip (encodeCurFrame, faceCurFrame):
             matches = fr.compare_faces(self.encodeListKnown, encodeFace)
             faceDis = fr.face_distance(self.encodeListKnown, encodeFace)
-            print(faceDis)
             matchIndex = np.argmin(faceDis)
 
            
             if matches[matchIndex]:
                 name = self.classNames[matchIndex].upper()
-                print(name)
                 y1,x2,y2,x1 = faceLoc
                 y1,x2,y2,x1 = y1 *4, x2*4, y2*4,x1*4
                 cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
@@ -288,7 +286,7 @@ class App(ct.CTk):
 
 
         if not self.cancel:
-            self.img_holder.after (10, self.show_frame)
+            self.img_holder.after (5, self.show_frame)
 
     def specialcase(self):
         self.encodeListKnown = self.findEncodings()
