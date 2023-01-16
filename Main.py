@@ -273,6 +273,7 @@ class App(ct.CTk):
 
 
         if (bool):
+            imgcreate = cv2.cvtColor(imgcreate, cv2.COLOR_BGR2RGBA)
             prevImg = Image.fromarray(imgcreate)
             imgtk = ImageTk.PhotoImage(image=prevImg)
             bool = False
