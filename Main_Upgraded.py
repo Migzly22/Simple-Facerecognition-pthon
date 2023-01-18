@@ -19,7 +19,7 @@ ct.set_appearance_mode("Dark")
 color1 = "#503417"
 color2 = "#c09d69"
 color3 = "#a18458"
-color4 = "#2c6d93"
+color4 = "#8f7959"
 color5 ="#503417"
 bwidth= 1.5
 
